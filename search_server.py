@@ -14,7 +14,6 @@ import chardet
 import fire
 import html2text
 import googlesearch
-import parlai.agents.rag.retrieve_api
 import rich
 import rich.markup
 import requests
