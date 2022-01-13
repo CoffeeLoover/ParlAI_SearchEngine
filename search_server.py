@@ -452,27 +452,7 @@ class Application:
         """
         print(_get_and_parse(url))
 
-    def test_server(self, query: str, n: int, host : str = _DEFAULT_HOST) -> None:
-
-        """ Creates a thin fake client to test a server that is already up.
-        Expects a server to have already been started with `python search_server.py serve [options]`.
-        Creates a retriever client the same way ParlAi client does it for its chat bot, then
-        sends a query to the server.
-        """
-        host, port = _parse_host(host)
-
-        print(f"Query: `{query}`")
-        print(f"n: {n}")
-
-        retriever = parlai.agents.rag.retrieve_api.SearchEngineRetriever(
-            dict(
-                search_server=f"{host}:{port}",
-                skip_retrieval_token=False,
-            )
-        )
-        print("Retrieving one.")
-        print(retriever.retrieve([query], n))
-        print("Done.")
+ 
 
 
 if __name__ == "__main__":
